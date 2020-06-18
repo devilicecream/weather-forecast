@@ -16,8 +16,7 @@ citySearch.addEventListener('keyup', function (e) {
   })
 
 searchBtn.addEventListener('click', function() {
-  let db= downloadWeather(citySearch.value);
-  console.log(weatherInfo);
+  downloadWeather();
 });
 
 
@@ -35,6 +34,6 @@ function downloadWeather() {
       alert('We had an error');
     })
 
-  searchTerm.value = "";
+  citySearch.value = "";
   // iframe.remove();
 }
