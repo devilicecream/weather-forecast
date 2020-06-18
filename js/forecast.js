@@ -22,18 +22,19 @@ searchBtn.addEventListener('click', function() {
 
 
 
-function downloadWeather(cityName) {
-  let url = baseURL + cityName.toLowerCase() + key;
+function downloadWeather() {
+  let userInput = citySearch.value;
+  let url = baseURL + userInput.toLowerCase() + key;
   fetch(url)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function (data) {
-    weatherInfo = data.list;
-    return weatherInfo;
+    .then(function(response) {
+      let data = response.json();
+      return data
+    }).then(function (data) {
+      weatherInfo = data.list;
+    }).catch(function (error) {
+      alert('We had an error');
     })
-  .catch(function (error) {
-    alert('Something went wrong');
-  })
-  return weatherInfo;
+
+  searchTerm.value = "";
+  // iframe.remove();
 }
