@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.meteoTitle {
+  display: inline-block;
+  width: 45%;
+}
+
+body {
+  background-color: #78dce8
+}
+
+.page {
+  margin: 0 auto;
+  width: 90%;
+  background-color: white;
+}
+
+iframe {
+  border: 2px solid green;
+  margin: 0 auto;
+  overflow: scroll;
+}
+
+header {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#searchTerm {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 70px;
+}
+
+.fa-search {
+  font-size: 1.5em;
+}

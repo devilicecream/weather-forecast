@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="widht=device-width, initial-scale=1">
+  <title>Luca's Weather Forecast</title>
+  <link rel="icon" href="images/icon.jpg">
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/debug.css">
+  <script src="https://kit.fontawesome.com/452daa144f.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+  <body>
+    <div class="page">
+    <header>
+      <h1>My weather forecast</h1>
+      <div class="container d-flex justify-content-center" id="searchBox">
+        <input type="text" id="searchTerm" placeholder="Enter your city here">
+        <button id="searchBtn" class="search"><i class="fas fa-search icon-large"></i></button>
+      </div>
+    </header>
+    <div class="container d-flex justify-content-center meteoItaly">Ciao ciao
+      <!-- <iframe class="meteoItaly"
+      src="https://www.3bmeteo.com/moduli_esterni/italia_7_giorni/000000/78dce8/5e5e5e/ffffff/it"
+       width="800" height="675" frameborder="0"></iframe><br/> -->
+    </div>
+    <div class="container" id="global-forecasts">
+      <div class="row justify-content-center">
+        <div class="accordion col-sm-12 col-md-6 col-lg-4" id="accordion1">
+          <div class="card">
+            <img src="" alt="daily italy forecast" id="headingOne">
+            <div class="container-fluid d-flex justify-content-between">
+            <div class="btn btn-link weatherTitle" role="button"
+            data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne">Ciao</div>
+            <span class="weatherIcon">icon</span>
+            <span class="tmin">T min</span>
+            <span class="tmax">T max</span>
+          </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+            data-parent="#accordion1">
+            <div class="card-body">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Hour</th>
+                    <th>Weather</th>
+                    <th>T Min</th>
+                    <th>T Max</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card">
+            <img src="" alt="daily italy forecast" id="headingTwo">
+            <button class="btn btn-link btn-block text-left" type="button"
+            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+            aria-controls="collapseTwo">Collapsible Group Item #2</button>
+            <h2>PROVA 2</h2>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+            data-parent="#accordion1">
+            <div class="card-body">
+              PORCO DIO PORCO headingTwo
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card">
+            <img src="" alt="daily italy forecast" id="headingThree">
+            <button class="btn btn-link btn-block text-left" type="button"
+            data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+            aria-controls="collapseThree">Collapsible Group Item #3</button>
+            <h2>PROVA 3</h2>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+            data-parent="#accordion1">
+            <div class="card-body">
+              PORCO DIO PORCO headingOne
+            </div>
+          </div>
+        </div>
+        </div>
+
+      </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/forecast.js">
+
+    </script>
+  </body>
+</html>
