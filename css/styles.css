@@ -3,3 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.day1 {
+  width: 45%;
+}
+
+.weather-icon {
+  background-color: green;
+  width: 70px;
+  display: inline;
+}
+
+.temp {
+  display: inline;
+}
