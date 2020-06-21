@@ -9,11 +9,16 @@
 }
 
 .weather-icon {
-  background-color: green;
   width: 70px;
   display: inline;
 }
 
 .temp {
   display: inline;
+  margin: 20px;
+}
+
+.btn {
+  display: block;
+  margin: 20px auto;
 }

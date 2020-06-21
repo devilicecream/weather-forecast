@@ -29,14 +29,53 @@
         </div>
       </div>
       <div class="row">
-        <div class="container-fluid col-md-6 col-lg-4">
-          <a class="btn day1" data-toggle="collapse" href="#day1">Prova</a>
-          <div class="weather-icon">Ciao</div>
-          <p class="temp tMin">min</p>
-          <p class="temp tMax">max</p>
+        <div class="container-fluid col-md-6">
+          <h2 class="text-center" id="cityName">Provincia di Taranto</h2>
+          <p class="temp" id="weatherTitle">Titolo meteo</p>
+          <div class="weather-icon" >
+            <img width="75" id="weatherIcon" src="" alt="Weather-icon">
+          </div>
+          <p id="tMAx"class="temp tMin">min</p>
+          <p id="tMin" class="temp tMax">max</p>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Show more
+          </button>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Hour</th>
+                    <th scope="col">Weather</br>Description</th>
+                    <th scope="col">Icon</th>
+                    <th scope="col">T min</th>
+                    <th scope="col">T max</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
         </div>
-        <div class="container-fluid col-md-6 col-lg-4"><p>Prova</p></div>
-        <div class="container-fluid col-md-6 col-lg-4"><p>Prova</p></div>
+
 
       </div>
 

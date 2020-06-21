@@ -1,12 +1,17 @@
 const citySearch = document.querySelector("#citySearch");
 const searchBtn = document.querySelector("#searchBtn");
+const form = document.querySelector('form');
+const cityName = document.querySelector('#cityName');
+const weatherTitle = document.querySelector('#weatherTitle');
+const weatherIcon = document.querySelector('#weatherIcon');
+const tMax = document.querySelector('#tMax');
+const tMin = document.querySelector('#tMin');
 
 
 const KELVIN = 273;
 const key = '&appid=436faa03983b144a87745bd11c39811e';
 
 let baseURL = 'http://api.openweathermap.org/data/2.5/forecast?q=';
-let finalurl;
 let weatherInfo;
 
 citySearch.addEventListener('keyup', function (e) {
@@ -18,8 +23,10 @@ citySearch.addEventListener('keyup', function (e) {
 
 searchBtn.addEventListener('click', async function(e) {
   e.preventDefault();
-  finalurl = baseURL + citySearch.value.toLowerCase() + key;
+  let finalurl = baseURL + citySearch.value.toLowerCase() + key;
   await downloadJSON(finalurl);
+  console.log('Okay');
+  // await compileHeading();
 });
 
 
@@ -34,9 +41,17 @@ function downloadJSON(url) {
   }
 }).then(response => {
   weatherInfo = response;
-  citySearch.value= "";
+}).then( function () {
+  compileHeading();
 });
+form.reset();
 };
+
+function compileHeading() {
+  cityName.textContent = `${weatherInfo.city.name}, ${weatherInfo.city.country} `;
+  weatherTitle.textContent = `${weatherInfo.list[0].weather[0].main} - ${weatherInfo.list[0].weather[0].description}`;
+  weatherIcon.src = `icons/${weatherInfo.list[0].weather[0].icon}.png`
+}
 
 //
 // function downloadWeather() {
