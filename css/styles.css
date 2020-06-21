@@ -22,3 +22,10 @@
   display: block;
   margin: 20px auto;
 }
+
+#searchBtn {
+  width: 75px;
+}
+.fa-search {
+  font-size: 1.5em;
+}
