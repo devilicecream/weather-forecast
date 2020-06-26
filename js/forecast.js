@@ -20,7 +20,6 @@ let baseURL = 'http://api.openweathermap.org/data/2.5/forecast?q=';
 let weatherInfo;
 
 posBtn.addEventListener('click', function() {
-  console.log('Ciao');
   if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(donwloadJsonFromPos);
   } else {
