@@ -17,10 +17,10 @@
     <header>
       <h1 class="text-center">Luca's Weather Page</h1>
       <form class="d-flex justify-content-center"  action="index.html" method="get">
-        <input class="bg-light" id="citySearch" type="text" value="">
+        <input  id="citySearch" type="text" value="">
         <button class='btn-light' id="searchBtn" type="submit"><i class="fas fa-search icon-large"></i></button>
       </form>
-
+      <button id="posBtn" class="btn btn-primary" type="button">Use my current position</button>
     </header>
     </div>
     <div class="container">
@@ -30,14 +30,14 @@
         </div>
       </div> -->
       <div class="row">
-        <div class="container col-md-6">
-          <h2 class="text-center" id="cityName">Prova Prova Prova</h2>
+        <div class="container-fluid col-lg-6 col-md-8">
+          <h2 class="text-center" id="cityName"></h2>
           <div id="meteoHeading" class="d-flex container-fluid justify-content-around">
-            <span class="temp" id="weatherTitle">Titolo meteo</span>
-            <img width="75" id="weatherIcon" src="" alt="Weather-icon">
-            <span id="actualTemp"class="temp">actualTemp</span>
-            <span id="humidity"class="temp">Humidity</span>
-            <span id="pressure" class="temp">Press</span>
+            <span class="temp" id="weatherTitle"></span>
+            <img width="75" id="weatherIcon" src="" alt="">
+            <span id="actualTemp"class="temp"></span>
+            <span id="humidity"class="temp"></span>
+            <span id="pressure" class="temp"></span>
           </div>
             <button id="next24hours" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             Show Next 24 Hours

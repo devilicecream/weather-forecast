@@ -9,6 +9,7 @@ const humidity = document.querySelector('#humidity');
 const pressure = document.querySelector('#pressure');
 const table = document.querySelector('table');
 const next24hours = document.querySelector('#next24hours');
+const posBtn = document.querySelector('#posBtn');
 
 
 
@@ -18,19 +19,22 @@ const key = '&appid=436faa03983b144a87745bd11c39811e';
 let baseURL = 'http://api.openweathermap.org/data/2.5/forecast?q=';
 let weatherInfo;
 
-if ('geolocation' in navigator) {
-  navigator.geolocation.getCurrentPosition(donwloadJsonFromPos);
-} else {
-  alert('Your browser doesn\'t support geolocation. Select your city manually');
-}
-
-async function donwloadJsonFromPos(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let posurl = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}`+key;
-  console.log(posurl);
-  await downloadJSON(posurl);
-}
+posBtn.addEventListener('click', function() {
+  console.log('Ciao');
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(donwloadJsonFromPos);
+  } else {
+    alert('Your browser doesn\'t support geolocation. Select your city manually');
+  }
+  async function donwloadJsonFromPos(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let posurl = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}`+key;
+    console.log(posurl);
+    await downloadJSON(posurl);
+  }
+  posBtn.remove()
+});
 
 
 citySearch.addEventListener('keyup', function (e) {
@@ -74,6 +78,7 @@ form.reset();
 function compileHeading() {
   cityName.textContent = `${weatherInfo.city.name}, ${weatherInfo.city.country} `;
   weatherIcon.src = `icons/${weatherInfo.list[0].weather[0].icon}.png`;
+  weatherIcon.style.display = 'flex';
   weatherTitle.textContent = `${weatherInfo.list[0].weather[0].main} - ${weatherInfo.list[0].weather[0].description}`;
   actualTemp.textContent = `${Math.floor(weatherInfo.list[0].main.temp- KELVIN)}° C`;
   humidity.textContent= `${weatherInfo.list[0].main.humidity} %`;
@@ -85,13 +90,14 @@ function compileTable() {
     console.log(i);
     let icon = document.createElement('img');
     icon.src = `icons/${weatherInfo.list[(i+1)].weather[0].icon}.png`;
-    icon.style.width = '60px';
+    icon.style.height = '60px';
     let tableRow = table.insertRow(i+1);
     let hourCell = tableRow.insertCell(0);
     hourCell.textContent = `${weatherInfo.list[(i+1)].dt_txt.substring(10,19)}`;
     let weatherCell = tableRow.insertCell(1);
     weatherCell.textContent = `${weatherInfo.list[(i+1)].weather[0].main} - ${weatherInfo.list[0].weather[0].description}`;
     let iconCell = tableRow.insertCell(2);
+    iconCell.setAttribute('class', 'iconCell')
     iconCell.appendChild(icon);
     let tMinCell = tableRow.insertCell(3);
     tMinCell.textContent = `${Math.floor(weatherInfo.list[(i+1)].main.temp_min- KELVIN)}° C`;
