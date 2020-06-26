@@ -15,7 +15,7 @@
 
 .temp {
   display: inline;
-  margin: 20px;
+  margin: 10px;
 }
 
 .btn {
@@ -25,7 +25,27 @@
 
 #searchBtn {
   width: 75px;
+  border-radius: 10px;
 }
+
 .fa-search {
   font-size: 1.5em;
+  color: #007bff;
+
+}
+
+#next24hours {
+  display: none;
+}
+
+.card-body {
+  margin: 0;
+  padding: 0;
+
+}
+
+#meteoHeading > span {
+  display:flex;
+  align-items: center;
+  font-weight: bold;
 }
